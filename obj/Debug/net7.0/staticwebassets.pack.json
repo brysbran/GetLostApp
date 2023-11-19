@@ -1,0 +1,77 @@
+{
+  "Files": [
+    {
+      "Id": "F:\\ETSU_Fall_23\\Server_Side\\GetLostApp\\GetLostApp\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\GetLostApp.bundle.scp.css",
+      "PackagePath": "staticwebassets\\GetLostApp.bundle.scp.css"
+    },
+    {
+      "Id": "F:\\ETSU_Fall_23\\Server_Side\\GetLostApp\\GetLostApp\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap\\bootstrap.min.css"
+    },
+    {
+      "Id": "F:\\ETSU_Fall_23\\Server_Side\\GetLostApp\\GetLostApp\\wwwroot\\css\\bootstrap\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\css\\bootstrap\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "F:\\ETSU_Fall_23\\Server_Side\\GetLostApp\\GetLostApp\\wwwroot\\css\\open-iconic\\FONT-LICENSE",
+      "PackagePath": "staticwebassets\\css\\open-iconic"
+    },
+    {
+      "Id": "F:\\ETSU_Fall_23\\Server_Side\\GetLostApp\\GetLostApp\\wwwroot\\css\\open-iconic\\ICON-LICENSE",
+      "PackagePath": "staticwebassets\\css\\open-iconic"
+    },
+    {
+      "Id": "F:\\ETSU_Fall_23\\Server_Side\\GetLostApp\\GetLostApp\\wwwroot\\css\\open-iconic\\README.md",
+      "PackagePath": "staticwebassets\\css\\open-iconic\\README.md"
+    },
+    {
+      "Id": "F:\\ETSU_Fall_23\\Server_Side\\GetLostApp\\GetLostApp\\wwwroot\\css\\open-iconic\\font\\css\\open-iconic-bootstrap.min.css",
+      "PackagePath": "staticwebassets\\css\\open-iconic\\font\\css\\open-iconic-bootstrap.min.css"
+    },
+    {
+      "Id": "F:\\ETSU_Fall_23\\Server_Side\\GetLostApp\\GetLostApp\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.eot",
+      "PackagePath": "staticwebassets\\css\\open-iconic\\font\\fonts\\open-iconic.eot"
+    },
+    {
+      "Id": "F:\\ETSU_Fall_23\\Server_Side\\GetLostApp\\GetLostApp\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.otf",
+      "PackagePath": "staticwebassets\\css\\open-iconic\\font\\fonts\\open-iconic.otf"
+    },
+    {
+      "Id": "F:\\ETSU_Fall_23\\Server_Side\\GetLostApp\\GetLostApp\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.svg",
+      "PackagePath": "staticwebassets\\css\\open-iconic\\font\\fonts\\open-iconic.svg"
+    },
+    {
+      "Id": "F:\\ETSU_Fall_23\\Server_Side\\GetLostApp\\GetLostApp\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.ttf",
+      "PackagePath": "staticwebassets\\css\\open-iconic\\font\\fonts\\open-iconic.ttf"
+    },
+    {
+      "Id": "F:\\ETSU_Fall_23\\Server_Side\\GetLostApp\\GetLostApp\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.woff",
+      "PackagePath": "staticwebassets\\css\\open-iconic\\font\\fonts\\open-iconic.woff"
+    },
+    {
+      "Id": "F:\\ETSU_Fall_23\\Server_Side\\GetLostApp\\GetLostApp\\wwwroot\\css\\site.css",
+      "PackagePath": "staticwebassets\\css\\site.css"
+    },
+    {
+      "Id": "F:\\ETSU_Fall_23\\Server_Side\\GetLostApp\\GetLostApp\\wwwroot\\js\\carousel.js",
+      "PackagePath": "staticwebassets\\js\\carousel.js"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.GetLostApp.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.build.GetLostApp.props",
+      "PackagePath": "build\\GetLostApp.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildMultiTargeting.GetLostApp.props",
+      "PackagePath": "buildMultiTargeting\\GetLostApp.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildTransitive.GetLostApp.props",
+      "PackagePath": "buildTransitive\\GetLostApp.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="Shared\imgs\apptrail.jpg" />
+    <Content Include="Shared\imgs\faveicon.ico" />
+    <Content Include="Shared\imgs\grandteton.jpeg" />
+    <Content Include="Shared\imgs\horseshoebend.jpg" />
+    <Content Include="Shared\imgs\pacificcrest.jpg" />
+    <Content Include="Shared\imgs\zion.jpg" />
+  </ItemGroup>
+
+</Project>
