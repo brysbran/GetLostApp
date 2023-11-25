@@ -1,10 +1,44 @@
-﻿<h3>trails</h3>
-
+﻿
 <!--
     File where the ability to search trails and see information about them should be
     use api to serve this data
 -->
+@page "/trails"
+
+<PageTitle>Trails</PageTitle>
+
+<div class="center-container">
+    <h1>Explore Trails</h1>
+    <p>Discover hiking trails across different states.</p>
+</div>
+
+<div class="center-container">
+    <input @bind="searchState" placeholder="Enter state..." />
+    <button @onclick="Search">Search</button>
+</div>
+
+<!-- Display search results using TrailModal -->
+@foreach (var trail in searchResults)
+{
+    <TrailModal.TrailModel Trail="trail" OnClose="(() => CloseModal(trail))" />
+}
 
 @code {
+    private string searchState;
+    private List<TrailModal.TrailModel> searchResults;
 
+    // Inject HttpClient into the component
+    [Inject]
+    private HttpClient HttpClient { get; set; }
+
+    private async Task Search()
+    {
+        // Call the API to get trails based on the user's entered state
+        searchResults = await HttpClient.GetFromJsonAsync<List<TrailModal.TrailModel>>($"http://127.0.0.1:8000/trails/{searchState}");
+    }
+
+    private void CloseModal(TrailModal.TrailModel trail)
+    {
+        // Implement logic to close the modal or handle the close event
+    }
 }

@@ -28,12 +28,16 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXgucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/ETSU_Fall_23/Server_Side/GetLostApp/GetLostApp/Pages/share.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcc2hhcmUucmF6b3I=
+[F:/ETSU_Fall_23/Server_Side/GetLostApp/GetLostApp/Pages/Share.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmUucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/ETSU_Fall_23/Server_Side/GetLostApp/GetLostApp/Pages/trails.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcdHJhaWxzLnJhem9y
+[F:/ETSU_Fall_23/Server_Side/GetLostApp/GetLostApp/Pages/TrailModal.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVHJhaWxNb2RhbC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/ETSU_Fall_23/Server_Side/GetLostApp/GetLostApp/Pages/Trails.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVHJhaWxzLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
 [F:/ETSU_Fall_23/Server_Side/GetLostApp/GetLostApp/Shared/SurveyPrompt.razor]

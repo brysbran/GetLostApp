@@ -1,8 +1,20 @@
 {
   "version": 2,
-  "dgSpecHash": "LKze6XNVd9dd3jAkA3NnxMMJtEQ3+CSDXHHPz2dXd15pdERzqBAPBlEwmON3nHgxLJKkSLkUrLpLHk/SmTdxoA==",
+  "dgSpecHash": "p0FcuRwJbb6rwt3I8dxMpzF2t9M4wCnNYCjqmd2rvuhrybJg2gMoYhwqtTrr1G6GmzLrnUzM+Nal8OWKc2rucg==",
   "success": true,
   "projectFilePath": "F:\\ETSU_Fall_23\\Server_Side\\GetLostApp\\GetLostApp\\GetLostApp.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\bcbra\\.nuget\\packages\\microsoft.aspnetcore.authorization\\6.0.2\\microsoft.aspnetcore.authorization.6.0.2.nupkg.sha512",
+    "C:\\Users\\bcbra\\.nuget\\packages\\microsoft.aspnetcore.components\\6.0.2\\microsoft.aspnetcore.components.6.0.2.nupkg.sha512",
+    "C:\\Users\\bcbra\\.nuget\\packages\\microsoft.aspnetcore.components.analyzers\\6.0.2\\microsoft.aspnetcore.components.analyzers.6.0.2.nupkg.sha512",
+    "C:\\Users\\bcbra\\.nuget\\packages\\microsoft.aspnetcore.metadata\\6.0.2\\microsoft.aspnetcore.metadata.6.0.2.nupkg.sha512",
+    "C:\\Users\\bcbra\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\6.0.0\\microsoft.extensions.dependencyinjection.abstractions.6.0.0.nupkg.sha512",
+    "C:\\Users\\bcbra\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\6.0.0\\microsoft.extensions.logging.abstractions.6.0.0.nupkg.sha512",
+    "C:\\Users\\bcbra\\.nuget\\packages\\microsoft.extensions.options\\6.0.0\\microsoft.extensions.options.6.0.0.nupkg.sha512",
+    "C:\\Users\\bcbra\\.nuget\\packages\\microsoft.extensions.primitives\\6.0.0\\microsoft.extensions.primitives.6.0.0.nupkg.sha512",
+    "C:\\Users\\bcbra\\.nuget\\packages\\microsoft.jsinterop\\6.0.2\\microsoft.jsinterop.6.0.2.nupkg.sha512",
+    "C:\\Users\\bcbra\\.nuget\\packages\\quick.aspnetcore.components.web.extensions\\6.0.2\\quick.aspnetcore.components.web.extensions.6.0.2.nupkg.sha512",
+    "C:\\Users\\bcbra\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
+  ],
   "logs": []
 }

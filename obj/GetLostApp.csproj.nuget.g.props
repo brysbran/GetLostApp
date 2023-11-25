@@ -12,4 +12,7 @@
   <ItemGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
     <SourceRoot Include="C:\Users\bcbra\.nuget\packages\" />
   </ItemGroup>
+  <ImportGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <Import Project="$(NuGetPackageRoot)quick.aspnetcore.components.web.extensions\6.0.2\buildTransitive\Quick.AspNetCore.Components.Web.Extensions.props" Condition="Exists('$(NuGetPackageRoot)quick.aspnetcore.components.web.extensions\6.0.2\buildTransitive\Quick.AspNetCore.Components.Web.Extensions.props')" />
+  </ImportGroup>
 </Project>

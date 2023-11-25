@@ -53,6 +53,30 @@
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
+      "Id": "F:\\ETSU_Fall_23\\Server_Side\\GetLostApp\\GetLostApp\\wwwroot\\faveicon.ico",
+      "PackagePath": "staticwebassets\\faveicon.ico"
+    },
+    {
+      "Id": "F:\\ETSU_Fall_23\\Server_Side\\GetLostApp\\GetLostApp\\wwwroot\\imgs\\apptrail.jpg",
+      "PackagePath": "staticwebassets\\imgs\\apptrail.jpg"
+    },
+    {
+      "Id": "F:\\ETSU_Fall_23\\Server_Side\\GetLostApp\\GetLostApp\\wwwroot\\imgs\\grandteton.jpeg",
+      "PackagePath": "staticwebassets\\imgs\\grandteton.jpeg"
+    },
+    {
+      "Id": "F:\\ETSU_Fall_23\\Server_Side\\GetLostApp\\GetLostApp\\wwwroot\\imgs\\horseshoebend.jpg",
+      "PackagePath": "staticwebassets\\imgs\\horseshoebend.jpg"
+    },
+    {
+      "Id": "F:\\ETSU_Fall_23\\Server_Side\\GetLostApp\\GetLostApp\\wwwroot\\imgs\\pacificcrest.jpg",
+      "PackagePath": "staticwebassets\\imgs\\pacificcrest.jpg"
+    },
+    {
+      "Id": "F:\\ETSU_Fall_23\\Server_Side\\GetLostApp\\GetLostApp\\wwwroot\\imgs\\zion.jpg",
+      "PackagePath": "staticwebassets\\imgs\\zion.jpg"
+    },
+    {
       "Id": "F:\\ETSU_Fall_23\\Server_Side\\GetLostApp\\GetLostApp\\wwwroot\\js\\carousel.js",
       "PackagePath": "staticwebassets\\js\\carousel.js"
     },

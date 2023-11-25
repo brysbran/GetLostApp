@@ -2,10 +2,10 @@
 
 <PageTitle>Index</PageTitle>
 
-
 <div class="center-container">
-<h1>GetLost: A Hiker's Best Friend</h1>
+    <h1>GetLost: A Hiker's Best Friend</h1>
 </div>
+
 <div class="center-container">
     <p>A place for hikers to see where to explore, and share it with the world.</p>
 </div>
@@ -13,24 +13,44 @@
 <div class="center-container">
     <div class="carousel-container">
         <div class="carousel-wrapper">
-            <div class="carousel-slide">
-                <img src="F:\ETSU_Fall_23\Server_Side\GetLostApp\GetLostApp\Shared\imgs\apptrail.jpg" alt="Appalachian Trail">
-            </div>
-            <div class="carousel-slide">
-                <img src="F:\ETSU_Fall_23\Server_Side\GetLostApp\GetLostApp\Shared\imgs\grandteton.jpeg" alt="Grand Teton's'">
-            </div>
-            <div class="carousel-slide">
-                <img src="F:\ETSU_Fall_23\Server_Side\GetLostApp\GetLostApp\Shared\imgs\horseshoebend.jpg" alt="Horseshoe Bend">
-            </div>
-            <div class="carousel-slide">
-                <img src="F:\ETSU_Fall_23\Server_Side\GetLostApp\GetLostApp\Shared\imgs\pacificcrest.jpg" alt="Pacific Crest Trail">
-            </div>
-            <div class="carousel-slide">
-                <img src="F:\ETSU_Fall_23\Server_Side\GetLostApp\GetLostApp\Shared\imgs\zion.jpg" alt="Zion National Park">
-            </div>
-           
+            @foreach (var image in ImagePaths)
+            {
+                <div class="carousel-slide">
+                    <img src="@image" alt="Trail Image">
+                </div>
+            }
         </div>
     </div>
 </div>
 
-<script src="F:\ETSU_Fall_23\Server_Side\GetLostApp\GetLostApp\wwwroot\js\carousel.js"></script>
+@code {
+    private string[] ImagePaths = new string[]
+        {
+        "imgs/apptrail.jpg",
+        "imgs/grandteton.jpeg",
+        "imgs/horseshoebend.jpg",
+        "imgs/pacificcrest.jpg",
+        "imgs/zion.jpg"
+        };
+
+    private string Script => @"
+        console.log('Carousel script loaded');
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const wrapper = document.querySelector('.carousel-wrapper');
+            let currentIndex = 0;
+
+            function showSlide(index) {
+                const newTranslateValue = -index * 100 + '%';
+                wrapper.style.transform = 'translateX(' + newTranslateValue + ')';
+            }
+
+            function nextSlide() {
+                currentIndex = (currentIndex + 1) % wrapper.children.length;
+                showSlide(currentIndex);
+            }
+
+            setInterval(nextSlide, 5000); // Change slide every 5 seconds (adjust as needed)
+        });
+    ";
+}

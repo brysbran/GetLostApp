@@ -7,12 +7,16 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Include="Shared\imgs\apptrail.jpg" />
-    <Content Include="Shared\imgs\faveicon.ico" />
-    <Content Include="Shared\imgs\grandteton.jpeg" />
-    <Content Include="Shared\imgs\horseshoebend.jpg" />
-    <Content Include="Shared\imgs\pacificcrest.jpg" />
-    <Content Include="Shared\imgs\zion.jpg" />
+    <None Include="wwwroot\imgs\apptrail.jpg" />
+    <None Include="wwwroot\faveicon.ico" />
+    <None Include="wwwroot\imgs\grandteton.jpeg" />
+    <None Include="wwwroot\imgs\horseshoebend.jpg" />
+    <None Include="wwwroot\imgs\pacificcrest.jpg" />
+    <None Include="wwwroot\imgs\zion.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Shared\imgs\" />
   </ItemGroup>
 
 </Project>
