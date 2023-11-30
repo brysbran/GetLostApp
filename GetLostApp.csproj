@@ -9,6 +9,7 @@
   <ItemGroup>
     <None Include="wwwroot\imgs\apptrail.jpg" />
     <None Include="wwwroot\faveicon.ico" />
+    <None Include="wwwroot\imgs\DevImage.jpg" />
     <None Include="wwwroot\imgs\grandteton.jpeg" />
     <None Include="wwwroot\imgs\horseshoebend.jpg" />
     <None Include="wwwroot\imgs\pacificcrest.jpg" />
@@ -16,7 +17,13 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="API\UserImgs\" />
     <Folder Include="Shared\imgs\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="Quick.AspNetCore.Components.Web.Extensions" Version="6.0.2" />
   </ItemGroup>
 
 </Project>

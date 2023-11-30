@@ -1,8 +1,18 @@
-﻿<h3>About</h3>
+﻿
+@page "/about"
 
 <!--
     Page to display information about the developer who created this project
 -->
-@code {
 
+<div class="center-container">
+    <h2>Meet the Team</h2>
+    <img class="square-image" src=@imgPath />
+    <p>This project was directed, produced, coded, and stylized by Bryson Brandon. He was able to complete this project after many hours of blood, sweat, tears, and broken fingers from coding.</p>
+    <a href="https://github.com/brysbran" class="button-link">
+        <button type="button">Github</button>
+        </a>
+</div>
+@code {
+    public string imgPath = "F:/ETSU_Fall_23/Server_Side/GetLostApp/GetLostApp/wwwroot/imgs/DevImage.jpg";
 }

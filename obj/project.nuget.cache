@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "p0FcuRwJbb6rwt3I8dxMpzF2t9M4wCnNYCjqmd2rvuhrybJg2gMoYhwqtTrr1G6GmzLrnUzM+Nal8OWKc2rucg==",
+  "dgSpecHash": "9MfhxfGM7VyrryjKSBYMqsQcNuvnxQAEfHS2pzCDm5/KZ5KnBpFuAVfhgaEbCDEzBxXyxaNoBRFvrPA8l2S+JA==",
   "success": true,
   "projectFilePath": "F:\\ETSU_Fall_23\\Server_Side\\GetLostApp\\GetLostApp\\GetLostApp.csproj",
   "expectedPackageFiles": [
@@ -13,6 +13,7 @@
     "C:\\Users\\bcbra\\.nuget\\packages\\microsoft.extensions.options\\6.0.0\\microsoft.extensions.options.6.0.0.nupkg.sha512",
     "C:\\Users\\bcbra\\.nuget\\packages\\microsoft.extensions.primitives\\6.0.0\\microsoft.extensions.primitives.6.0.0.nupkg.sha512",
     "C:\\Users\\bcbra\\.nuget\\packages\\microsoft.jsinterop\\6.0.2\\microsoft.jsinterop.6.0.2.nupkg.sha512",
+    "C:\\Users\\bcbra\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
     "C:\\Users\\bcbra\\.nuget\\packages\\quick.aspnetcore.components.web.extensions\\6.0.2\\quick.aspnetcore.components.web.extensions.6.0.2.nupkg.sha512",
     "C:\\Users\\bcbra\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
   ],

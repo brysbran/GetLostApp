@@ -57,6 +57,10 @@
       "PackagePath": "staticwebassets\\faveicon.ico"
     },
     {
+      "Id": "F:\\ETSU_Fall_23\\Server_Side\\GetLostApp\\GetLostApp\\wwwroot\\imgs\\DevImage.jpg",
+      "PackagePath": "staticwebassets\\imgs\\DevImage.jpg"
+    },
+    {
       "Id": "F:\\ETSU_Fall_23\\Server_Side\\GetLostApp\\GetLostApp\\wwwroot\\imgs\\apptrail.jpg",
       "PackagePath": "staticwebassets\\imgs\\apptrail.jpg"
     },

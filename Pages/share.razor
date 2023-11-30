@@ -1,5 +1,154 @@
-﻿<h3>Share</h3>
+﻿@page "/share"
+
+<div class="center-container">
+    <h1>Share</h1>
+    <p>Share your hiking experiences and see what others have to say</p>
+</div>
+
+<!-- Form to create a new post -->
+<div class="center-container">
+    <h2>Create New Post</h2>
+    <div>
+        <label>Description:</label>
+        <input @bind="newPost.Description" />
+    </div>
+    <div>
+        <label>Rating:</label>
+        <input type="number" min="1" max="5" @bind="newPost.Rating" />
+    </div>
+    <div>
+        <label>Select Trail:</label>
+        <select @bind="newPost.TrailId">
+            @foreach (var trail in trails)
+            {
+                <option value="@trail.TrailId">@trail.TrailName</option>
+            }
+        </select>
+    </div>
+    <div>
+        <label>Upload Photo:</label>
+        <InputFile OnChange="HandleFileChange" />
+    </div>
+    <button @onclick="CreatePost">Create Post</button>
+</div>
+
+<!-- Display existing posts -->
+@if (userPosts != null && userPosts.Any())
+{
+    <div>
+        <h2>Existing Posts</h2>
+        @foreach (var post in userPosts)
+        {
+            <div class="user-post">
+                <p>Description: @post.Description</p>
+                <p>Rating: @post.Rating</p>
+                <p>Trail: @post.TrailName</p>
+                <img src="@post.Photo" alt="User Post Photo" />
+            </div>
+        }
+    </div>
+}
 
 @code {
+    private List<UserPostModel> userPosts;
+    private UserPostModel newPost = new UserPostModel();
+    private IBrowserFile uploadedFile;
+    private List<TrailModel> trails = new List<TrailModel>();
 
+    // Inject HttpClient into the component
+    [Inject]
+    private HttpClient HttpClient { get; set; }
+
+    // Event handler for file upload
+    private async Task HandleFileChange(InputFileChangeEventArgs e)
+    {
+        uploadedFile = e.GetMultipleFiles().FirstOrDefault();
+    }
+
+    // Event handler to create a new post
+    private async Task CreatePost()
+    {
+        Console.WriteLine("CreatePost() called");
+        try
+        {
+            // Check if a file is uploaded
+            if (uploadedFile != null)
+            {
+                // Save the file to the specified path
+                var filePath = Path.Combine("F:\\ETSU_Fall_23\\Server_Side\\GetLostApp\\GetLostApp\\API\\UserImgs\\", uploadedFile.Name);
+
+                using (var stream = new FileStream(filePath, FileMode.Create))
+                {
+                    await uploadedFile.OpenReadStream().CopyToAsync(stream);
+                }
+
+                // Set the Photo property of the new post to the file path
+                newPost.Photo = filePath;
+            }
+
+            // Post data to the API endpoint
+            HttpResponseMessage response = await HttpClient.PostAsJsonAsync("/user/posts", newPost);
+
+            // Check if the post was successful
+            response.EnsureSuccessStatusCode();
+
+            // Refresh the list of user posts
+            await LoadUserPosts();
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error creating post: {ex.Message}");
+        }
+    }
+
+    // Load user posts from the API
+    private async Task LoadUserPosts()
+    {
+        try
+        {
+            userPosts = await HttpClient.GetFromJsonAsync<List<UserPostModel>>("user/posts");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error loading user posts: {ex.Message}");
+        }
+    }
+
+    // Load user posts when the component is initialized
+    protected override async Task OnInitializedAsync()
+    {
+        // Set the base address for relative URIs
+        HttpClient.BaseAddress = new Uri("http://127.0.0.1:8000/");
+
+        await LoadUserPosts();
+        await LoadTrails();
+    }
+
+    // Load trails from the API
+    private async Task LoadTrails()
+    {
+        try
+        {
+            trails = await HttpClient.GetFromJsonAsync<List<TrailModel>>("trails");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine("Error fetching trails");
+        }
+    }
+
+    public class TrailModel
+    {
+        public string TrailId { get; set; }
+        public string TrailName { get; set; }
+    }
+
+    public class UserPostModel
+    {
+        public string TrailId { get; set; }
+        public string TrailName { get; set; }
+        public string Description { get; set; }
+        public string Photo { get; set; }
+        public int Rating { get; set; }
+    }
 }

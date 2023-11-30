@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "RwFV8Bxsjwi+nqZRPUS2MFQJ8KbmVAUlhBYIByLCerk=",
+  "Hash": "kV49LnTEULJZujVFxs42Q0xaGNsNKik9M/qEDVhzurY=",
   "Source": "GetLostApp",
   "BasePath": "_content/GetLostApp",
   "Mode": "Default",
@@ -16,6 +16,23 @@
     }
   ],
   "Assets": [
+    {
+      "Identity": "C:\\Users\\bcbra\\.nuget\\packages\\quick.aspnetcore.components.web.extensions\\6.0.2\\staticwebassets\\headManager.js",
+      "SourceId": "Quick.AspNetCore.Components.Web.Extensions",
+      "SourceType": "Package",
+      "ContentRoot": "C:\\Users\\bcbra\\.nuget\\packages\\quick.aspnetcore.components.web.extensions\\6.0.2\\staticwebassets\\",
+      "BasePath": "_content/Quick.AspNetCore.Components.Web.Extensions",
+      "RelativePath": "headManager.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "C:\\Users\\bcbra\\.nuget\\packages\\quick.aspnetcore.components.web.extensions\\6.0.2\\staticwebassets\\headManager.js"
+    },
     {
       "Identity": "F:\\ETSU_Fall_23\\Server_Side\\GetLostApp\\GetLostApp\\obj\\Debug\\net7.0\\scopedcss\\bundle\\GetLostApp.styles.css",
       "SourceId": "GetLostApp",
@@ -287,6 +304,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\imgs\\apptrail.jpg"
+    },
+    {
+      "Identity": "F:\\ETSU_Fall_23\\Server_Side\\GetLostApp\\GetLostApp\\wwwroot\\imgs\\DevImage.jpg",
+      "SourceId": "GetLostApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "F:\\ETSU_Fall_23\\Server_Side\\GetLostApp\\GetLostApp\\wwwroot\\",
+      "BasePath": "_content/GetLostApp",
+      "RelativePath": "imgs/DevImage.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\imgs\\DevImage.jpg"
     },
     {
       "Identity": "F:\\ETSU_Fall_23\\Server_Side\\GetLostApp\\GetLostApp\\wwwroot\\imgs\\grandteton.jpeg",
