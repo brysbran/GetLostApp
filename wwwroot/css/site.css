@@ -99,25 +99,25 @@ body {
     overflow: hidden;
 }
 
-.carousel-container {
-    width: 100%;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    float: none;
-    padding: 10px;
-    height: 60vh;
-    width: 75vh;
-}
-
 .carousel-wrapper {
     display: flex;
+    flex-direction: row;
+    overflow: hidden;
+    width: 100%;
 }
 
 .carousel-slide {
-    min-width: 100%;
+
+    position: relative;
+    width: 100%;
+
 }
+
+    .carousel-slide img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
 
 img {
     width: 100%;
@@ -198,3 +198,17 @@ img {
     border-radius: 5px;
     cursor: pointer;
 }
+.user-post-card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px;
+    margin: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+}
+
+    .user-post-card img {
+        max-width: 100%;
+        border-radius: 8px;
+        margin-top: 10px;
+    }

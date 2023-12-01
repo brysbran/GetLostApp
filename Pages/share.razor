@@ -8,6 +8,11 @@
 <!-- Form to create a new post -->
 <div class="center-container">
     <h2>Create New Post</h2>
+    
+    <div>
+        <label>Enter the Trail: </label>
+        <input @bind="newPost.TrailName" />
+    </div>
     <div>
         <label>Description:</label>
         <input @bind="newPost.Description" />
@@ -16,15 +21,7 @@
         <label>Rating:</label>
         <input type="number" min="1" max="5" @bind="newPost.Rating" />
     </div>
-    <div>
-        <label>Select Trail:</label>
-        <select @bind="newPost.TrailId">
-            @foreach (var trail in trails)
-            {
-                <option value="@trail.TrailId">@trail.TrailName</option>
-            }
-        </select>
-    </div>
+
     <div>
         <label>Upload Photo:</label>
         <InputFile OnChange="HandleFileChange" />
@@ -35,17 +32,19 @@
 <!-- Display existing posts -->
 @if (userPosts != null && userPosts.Any())
 {
-    <div>
+    <div class="center-container">
         <h2>Existing Posts</h2>
-        @foreach (var post in userPosts)
-        {
-            <div class="user-post">
-                <p>Description: @post.Description</p>
-                <p>Rating: @post.Rating</p>
-                <p>Trail: @post.TrailName</p>
-                <img src="@post.Photo" alt="User Post Photo" />
-            </div>
-        }
+        <div class="user-posts-container">
+            @foreach (var post in userPosts)
+            {
+                <div class="user-post-card">
+                    <p>Description: @post.Description</p>
+                    <p>Rating: @post.Rating</p>
+                    <p>Trail: @post.TrailName</p>
+                    <img src="@post.Photo" alt="User Post Photo" />
+                </div>
+            }
+        </div>
     </div>
 }
 
@@ -99,6 +98,7 @@
         {
             Console.WriteLine($"Error creating post: {ex.Message}");
         }
+
     }
 
     // Load user posts from the API
@@ -121,11 +121,11 @@
         HttpClient.BaseAddress = new Uri("http://127.0.0.1:8000/");
 
         await LoadUserPosts();
-        await LoadTrails();
+       // await LoadTrails();
     }
 
     // Load trails from the API
-    private async Task LoadTrails()
+   /* private async Task LoadTrails()
     {
         try
         {
@@ -135,7 +135,7 @@
         {
             Console.WriteLine("Error fetching trails");
         }
-    }
+    }*/
 
     public class TrailModel
     {

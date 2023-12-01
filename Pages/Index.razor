@@ -11,46 +11,5 @@
 </div>
 
 <div class="center-container">
-    <div class="carousel-container">
-        <div class="carousel-wrapper">
-            @foreach (var image in ImagePaths)
-            {
-                <div class="carousel-slide">
-                    <img src="@image" alt="Trail Image">
-                </div>
-            }
-        </div>
-    </div>
-</div>
-
-@code {
-    private string[] ImagePaths = new string[]
-        {
-        "imgs/apptrail.jpg",
-        "imgs/grandteton.jpeg",
-        "imgs/horseshoebend.jpg",
-        "imgs/pacificcrest.jpg",
-        "imgs/zion.jpg"
-        };
-
-    private string Script => @"
-        console.log('Carousel script loaded');
-
-        document.addEventListener('DOMContentLoaded', function () {
-            const wrapper = document.querySelector('.carousel-wrapper');
-            let currentIndex = 0;
-
-            function showSlide(index) {
-                const newTranslateValue = -index * 100 + '%';
-                wrapper.style.transform = 'translateX(' + newTranslateValue + ')';
-            }
-
-            function nextSlide() {
-                currentIndex = (currentIndex + 1) % wrapper.children.length;
-                showSlide(currentIndex);
-            }
-
-            setInterval(nextSlide, 5000); // Change slide every 5 seconds (adjust as needed)
-        });
-    ";
-}
+    <img class="square-image" src="imgs/gif.gif" />
+ </div>

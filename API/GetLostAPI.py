@@ -1,7 +1,8 @@
-from fastapi import FastAPI, HTTPException, File, UploadFile
+from fastapi import FastAPI, HTTPException, File, UploadFile, Form
 from fastapi.responses import JSONResponse
 from fastapi.encoders import jsonable_encoder
 import pandas as pd
+import uvicorn
 
 app = FastAPI()
 #ensure you use this:
@@ -12,6 +13,27 @@ app = FastAPI()
 trails_df = pd.read_csv('trails.csv', encoding='latin1')
 trail_details_df = pd.read_csv('traildetails.csv', encoding='latin1')
 trails_info_df = pd.read_csv('trailsinfo.csv', encoding='latin1')
+
+def detect_encoding(file_path):
+    encodings_to_try = ['utf-8', 'latin-1']
+
+    for encoding in encodings_to_try:
+        try:
+            with open(file_path, 'r', encoding=encoding) as file:
+                file.read()
+            return encoding
+        except UnicodeDecodeError:
+            pass
+
+    return None
+
+file_path = 'userPosts.csv'
+detected_encoding = detect_encoding(file_path)
+
+if detected_encoding:
+    print(f"The file is encoded in: {detected_encoding}")
+else:
+    print("Unable to determine encoding.")
 
 
 # Function to get trail details by ID
@@ -71,17 +93,39 @@ def get_trail_details_endpoint(trail_id: int):
 def get_all_trails():
     return trails_df.to_dict(orient='records')
 
-# Function to handle user posts
-def handle_user_post(user_post: dict, photo: UploadFile):
-    # Validate and process the user's input
+#POST
+@app.post("/user/posts")
+async def post_user_experience(
+    user_post: dict,
+    photo: UploadFile = File(..., max_length=None),
+    TrailName: str = Form(...),
+):
+    try:
+        print("User post received: ", user_post)
+        result = handle_user_post(user_post, photo, TrailName)
+        return JSONResponse(content=jsonable_encoder(result), status_code=200)
+    except HTTPException as e:
+        return JSONResponse(
+            content=jsonable_encoder({"error": str(e)}), status_code=e.status_code
+        )
 
-    # Convert the user_post dictionary to a DataFrame
-    user_post_df = pd.DataFrame([user_post])
+
+
+def handle_user_post(user_post: dict, photo: UploadFile, TrailName: str):
+    # Validate and process the user's input
+    new_post = {
+        "Description": user_post.get("Description"),
+        "Rating": user_post.get("Rating"),
+        "trailName": str(TrailName),
+    }
+    print(new_post)
+    new_post_df = pd.DataFrame([new_post])
+    print("Saving post details to CSV...")
+    print(new_post_df)
 
     # Save the post details to a CSV file
-    with open("user_posts.csv", "a", encoding='utf-8') as f:
-        # Append the DataFrame to the CSV file, without writing the header if the file exists
-        user_post_df.to_csv(f, header=f.tell() == 0, index=False, encoding='utf-8')
+    with open("userPosts.csv", "a", encoding='utf-8') as f:
+        new_post_df.to_csv(f, header=f.tell() == 0, index=False, encoding='utf-8')
 
     # Handle photo upload and save the image
     with open(f"uploads/{photo.filename}", "wb") as f:
@@ -90,23 +134,18 @@ def handle_user_post(user_post: dict, photo: UploadFile):
     # Return a response, possibly with a success message
     return {"message": "Post created successfully"}
 
-# Endpoint to write post to CSV
-@app.post("/user/posts")
-async def post_user_experience(user_post: dict, photo: UploadFile = File(...)):
-    try:
-        print("Write post endpoint called")
-        result = handle_user_post(user_post, photo)
-        return JSONResponse(content=jsonable_encoder(result), status_code=200)
-    except HTTPException as e:
-        return JSONResponse(content=jsonable_encoder({"error": str(e)}), status_code=e.status_code)
 
 # Fetch user posts from CSV
 @app.get("/user/posts", response_model=list[dict])
 def get_user_posts():
     try:
-        user_posts_df = pd.read_csv("user_posts.csv", encoding='utf-8')
+        user_posts_df = pd.read_csv("userPosts.csv", encoding='utf-8')
         user_posts = user_posts_df.to_dict(orient='records')
         return user_posts
     except Exception as e:
         logging.exception("Error fetching user posts:")
         raise HTTPException(status_code=500, detail="Internal Server Error")    
+    
+
+if __name__ == "main":
+    uvicorn.run(app, host="127.0.0.1", port=8000, reload=True)

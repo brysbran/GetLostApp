@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "kV49LnTEULJZujVFxs42Q0xaGNsNKik9M/qEDVhzurY=",
+  "Hash": "IW0rS2v1b7Rt3sT8kIyrPIJAKrg0f5lMEFVF32S+6NQ=",
   "Source": "GetLostApp",
   "BasePath": "_content/GetLostApp",
   "Mode": "Default",
@@ -321,6 +321,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\imgs\\DevImage.jpg"
+    },
+    {
+      "Identity": "F:\\ETSU_Fall_23\\Server_Side\\GetLostApp\\GetLostApp\\wwwroot\\imgs\\gif.gif",
+      "SourceId": "GetLostApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "F:\\ETSU_Fall_23\\Server_Side\\GetLostApp\\GetLostApp\\wwwroot\\",
+      "BasePath": "_content/GetLostApp",
+      "RelativePath": "imgs/gif.gif",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\imgs\\gif.gif"
     },
     {
       "Identity": "F:\\ETSU_Fall_23\\Server_Side\\GetLostApp\\GetLostApp\\wwwroot\\imgs\\grandteton.jpeg",

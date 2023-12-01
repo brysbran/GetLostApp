@@ -65,6 +65,10 @@
       "PackagePath": "staticwebassets\\imgs\\apptrail.jpg"
     },
     {
+      "Id": "F:\\ETSU_Fall_23\\Server_Side\\GetLostApp\\GetLostApp\\wwwroot\\imgs\\gif.gif",
+      "PackagePath": "staticwebassets\\imgs\\gif.gif"
+    },
+    {
       "Id": "F:\\ETSU_Fall_23\\Server_Side\\GetLostApp\\GetLostApp\\wwwroot\\imgs\\grandteton.jpeg",
       "PackagePath": "staticwebassets\\imgs\\grandteton.jpeg"
     },
