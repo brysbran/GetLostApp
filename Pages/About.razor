@@ -1,0 +1,18 @@
+﻿
+@page "/about"
+
+<!--
+    Page to display information about the developer who created this project
+-->
+
+<div class="center-container">
+    <h2>Meet the Team</h2>
+    <img class="square-image" src=@imgPath />
+    <p>This project was directed, produced, coded, and stylized by Bryson Brandon. He was able to complete this project after many hours of blood, sweat, tears, and broken fingers from coding.</p>
+    <a href="https://github.com/brysbran" class="button-link">
+        <button type="button">Github</button>
+        </a>
+</div>
+@code {
+    public string imgPath = "imgs/DevImage.jpg";
+}

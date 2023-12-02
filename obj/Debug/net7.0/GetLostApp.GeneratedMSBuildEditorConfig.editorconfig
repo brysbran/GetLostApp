@@ -1,0 +1,113 @@
+is_global = true
+build_property.TargetFramework = net7.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = GetLostApp
+build_property.RootNamespace = GetLostApp
+build_property.ProjectDir = C:\Users\bcbra\Downloads\GetLostApp-master\GetLostApp-master\
+build_property.RazorLangVersion = 7.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\bcbra\Downloads\GetLostApp-master\GetLostApp-master
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/bcbra/Downloads/GetLostApp-master/GetLostApp-master/App.razor]
+build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bcbra/Downloads/GetLostApp-master/GetLostApp-master/GetLostApp/App.razor]
+build_metadata.AdditionalFiles.TargetPath = R2V0TG9zdEFwcFxBcHAucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bcbra/Downloads/GetLostApp-master/GetLostApp-master/GetLostApp/Pages/About.razor]
+build_metadata.AdditionalFiles.TargetPath = R2V0TG9zdEFwcFxQYWdlc1xBYm91dC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bcbra/Downloads/GetLostApp-master/GetLostApp-master/GetLostApp/Pages/Index.razor]
+build_metadata.AdditionalFiles.TargetPath = R2V0TG9zdEFwcFxQYWdlc1xJbmRleC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bcbra/Downloads/GetLostApp-master/GetLostApp-master/GetLostApp/Pages/share.razor]
+build_metadata.AdditionalFiles.TargetPath = R2V0TG9zdEFwcFxQYWdlc1xzaGFyZS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bcbra/Downloads/GetLostApp-master/GetLostApp-master/GetLostApp/Pages/TrailModal.razor]
+build_metadata.AdditionalFiles.TargetPath = R2V0TG9zdEFwcFxQYWdlc1xUcmFpbE1vZGFsLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bcbra/Downloads/GetLostApp-master/GetLostApp-master/GetLostApp/Pages/trails.razor]
+build_metadata.AdditionalFiles.TargetPath = R2V0TG9zdEFwcFxQYWdlc1x0cmFpbHMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bcbra/Downloads/GetLostApp-master/GetLostApp-master/GetLostApp/Shared/SurveyPrompt.razor]
+build_metadata.AdditionalFiles.TargetPath = R2V0TG9zdEFwcFxTaGFyZWRcU3VydmV5UHJvbXB0LnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bcbra/Downloads/GetLostApp-master/GetLostApp-master/GetLostApp/_Imports.razor]
+build_metadata.AdditionalFiles.TargetPath = R2V0TG9zdEFwcFxfSW1wb3J0cy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bcbra/Downloads/GetLostApp-master/GetLostApp-master/Pages/About.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWJvdXQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bcbra/Downloads/GetLostApp-master/GetLostApp-master/Pages/Index.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXgucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bcbra/Downloads/GetLostApp-master/GetLostApp-master/Pages/Share.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmUucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bcbra/Downloads/GetLostApp-master/GetLostApp-master/Pages/TrailModal.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVHJhaWxNb2RhbC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bcbra/Downloads/GetLostApp-master/GetLostApp-master/Pages/Trails.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVHJhaWxzLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bcbra/Downloads/GetLostApp-master/GetLostApp-master/Shared/SurveyPrompt.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXFN1cnZleVByb21wdC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bcbra/Downloads/GetLostApp-master/GetLostApp-master/_Imports.razor]
+build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bcbra/Downloads/GetLostApp-master/GetLostApp-master/GetLostApp/Shared/MainLayout.razor]
+build_metadata.AdditionalFiles.TargetPath = R2V0TG9zdEFwcFxTaGFyZWRcTWFpbkxheW91dC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-q0rqfo53op
+
+[C:/Users/bcbra/Downloads/GetLostApp-master/GetLostApp-master/GetLostApp/Shared/NavMenu.razor]
+build_metadata.AdditionalFiles.TargetPath = R2V0TG9zdEFwcFxTaGFyZWRcTmF2TWVudS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-yub4f322sb
+
+[C:/Users/bcbra/Downloads/GetLostApp-master/GetLostApp-master/Shared/MainLayout.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE1haW5MYXlvdXQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-keaskk6hfx
+
+[C:/Users/bcbra/Downloads/GetLostApp-master/GetLostApp-master/Shared/NavMenu.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE5hdk1lbnUucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-dbt8vta3dj
+
+[C:/Users/bcbra/Downloads/GetLostApp-master/GetLostApp-master/GetLostApp/Pages/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = R2V0TG9zdEFwcFxQYWdlc1xFcnJvci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bcbra/Downloads/GetLostApp-master/GetLostApp-master/GetLostApp/Pages/_Host.cshtml]
+build_metadata.AdditionalFiles.TargetPath = R2V0TG9zdEFwcFxQYWdlc1xfSG9zdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bcbra/Downloads/GetLostApp-master/GetLostApp-master/Pages/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bcbra/Downloads/GetLostApp-master/GetLostApp-master/Pages/_Host.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX0hvc3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 

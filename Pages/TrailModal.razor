@@ -1,0 +1,29 @@
+﻿<!-- TrailModal.razor -->
+<div class="modal">
+    <div class="modal-content">
+        <span class="close" @onclick="CloseModal">&times;</span>
+        <h3>@Trail.trailName</h3>
+        <p>State: @Trail.trailState</p>
+        <p>Region: @Trail.trailRegion</p>
+    </div>
+</div>
+
+@code {
+
+    [Parameter] public TrailModel Trail { get; set; }
+    [Parameter] public Action OnClose { get; set; }
+
+    private void CloseModal()
+    {
+        OnClose?.Invoke();
+    }
+
+    public class TrailModel
+    {
+        public int trailId { get; set; }
+        public string trailName { get; set; }
+        public string trailState { get; set; }
+        public string trailRegion { get; set; }
+        // Add more properties as needed
+    }
+}

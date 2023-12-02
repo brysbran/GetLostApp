@@ -1,0 +1,424 @@
+trailID,trailDifficulty,trailType,trailRating
+1,Easy,Out and back,4.6
+2,Easy,Out and back,4.6
+3,Easy,Loop,4.4
+4,Easy,Out and back,4.6
+5,Easy,Out and back,4.6
+6,Intermediate,Loop,4.5
+7,Intermediate,Loop,4.9
+8,Intermediate,Out and back,4.5
+9,Intermediate,Out and back,4.3
+10,Intermediate,Loop,4.8
+11,Advanced,Out and back,4.5
+12,Advanced,Loop,4.1
+13,Advanced,Loop,4.6
+14,Advanced,Loop,4.8
+15,Advanced,Loop,4.3
+16,Easy,Out and back,4.7
+17,Easy,Out and back,4.3
+18,Easy,Out and back,4.6
+19,Easy,Loop,4.9
+20,Easy,Loop,4.9
+21,Intermediate,Loop,4.3
+22,Intermediate,Loop,4.6
+23,Intermediate,Out and back,4.3
+24,Intermediate,Out and back,4.7
+25,Intermediate,Out and back,4.9
+26,Advanced,Out and back,5.0
+27,Advanced,Out and back,4.9
+28,Advanced,Out and back,4.7
+29,Advanced,Out and back,4.8
+30,Advanced,Out and back,4.7
+31,Easy,Out and back,4.7
+32,Easy,Out and back,4.7
+33,Easy,Out and back,4.8
+34,Easy,Out and back,4.6
+35,Easy,Out and back,4.7
+36,Advanced,Out and back,4.8
+37,Intermediate,Loop,4.6
+38,Advanced,Out and back,4.6
+39,Advanced,Loop,4.6
+40,Advanced,Out and back,4.6
+41,Advanced,Out and back,4.9
+42,Advanced,Out and back,4.2
+43,Easy,Out and back,4.2
+44,Easy,Loop,4.2
+45,Easy,Loop,4.4
+46,Easy,Out and back,3.8
+47,Easy,Loop,4.8
+48,Intermediate,Out and back,4.7
+49,Intermediate,Out and back,4.1
+50,Intermediate,Out and back,4.7
+51,Intermediate,Out and back,4.7
+52,Intermediate,Loop,4.5
+53,Advanced,Loop,4.9
+54,Advanced,Out and back,4.6
+55,Advanced,Loop,4.7
+56,Advanced,Out and back,4.9
+57,Advanced,Out and back,4.6
+58,Easy,Loop,4.5
+59,Easy,Out and back,4.5
+60,Easy,Loop,4.5
+61,Easy,Out and back,4.4
+62,Easy,Out and back,4.9
+63,Intermediate,Loop,4.1
+64,Intermediate,Out and back,4.4
+65,Intermediate,Out and back,4.7
+66,Intermediate,Loop,4.4
+67,Intermediate,Out and back,4.9
+68,Advanced,Out and back,4.6
+69,Advanced,Out and back,4.6
+70,Advanced,Out and back,5.0
+71,Easy,Loop,4.4
+72,Easy,Loop,4.8
+73,Easy,Loop,4.5
+74,Intermediate,Loop,3.3
+75,Intermediate,Loop,4.8
+76,Intermediate,Loop,4.3
+77,Intermediate,Loop,4.4
+78,Intermediate,Loop,3.2
+79,Advanced,Loop,4.6
+80,Advanced,Point to point,4.2
+81,Advanced,Point to point,4.6
+82,Easy,Out and back,4.7
+83,Easy,Out and back,4.4
+84,Easy,Out and back,4.7
+85,Easy,Loop,4.5
+86,Intermediate,Out and back,4.5
+87,Intermediate,Loop,4.6
+88,Intermediate,Out and back,4.5
+89,Advanced,Loop,4.9
+90,Advanced,Loop,4.3
+91,Advanced,Loop,4.5
+92,Advanced,Out and back,4.4
+93,Advanced,Point to point,4.3
+94,Easy,Loop,4.8
+95,Easy,Out and back,4.7
+96,Easy,Loop,4.5
+97,Easy,Loop,4.4
+98,Easy,Point to point,4.8
+99,Intermediate,Loop,4.6
+100,Intermediate,Loop,4.4
+101,Advanced,Point to point,4.5
+102,Easy,Out and back,3.9
+103,Easy,Point to point,4.4
+104,Easy,Out and back,4.4
+105,Easy,Loop,4.1
+106,Easy,Loop,4.5
+107,Intermediate,Point to point,4.4
+108,Intermediate,Loop,4.8
+109,Intermediate,Loop,4.1
+110,Intermediate,Point to point,4.9
+111,Intermediate,Loop,4.0
+112,Easy,Loop,4.8
+113,Easy,Out and back,4.7
+114,Easy,Out and back,4.5
+115,Easy,Out and back,4.8
+116,Easy,Out and back,4.4
+117,Intermediate,Out and back,4.9
+118,Intermediate,Out and back,4.7
+119,Advanced,Loop,4.6
+120,Advanced,Loop,4.6
+121,Advanced,Out and back,4.6
+122,Advanced,Loop,4.3
+123,Easy,Out and back,4.6
+124,Easy,Out and back,4.2
+125,Easy,Out and back,3.8
+126,Easy,Piont to point,4.5
+127,Easy,Loop,3.8
+128,Intermediate,Loop,4.4
+129,Intermediate,Loop,4.0
+130,Intermediate,Loop,4.4
+131,Intermediate,Loop,5.0
+132,Intermediate,Loop,3.7
+133,Easy,Out and back,4.6
+134,Easy,Loop,4.7
+135,Easy,Loop,4.6
+136,Easy,Loop,4.7
+137,Easy,Loop,4.7
+138,Intermediate,Out and back,4.8
+139,Intermediate,Loop,4.7
+140,Intermediate,Loop,4.5
+141,Intermediate,Loop,4.8
+142,Intermediate,Out and back,4.7
+143,Advanced,Loop,4.8
+144,Advanced,Loop,4.9
+145,Advanced,Loop,4.8
+146,Advanced,Loop,4.7
+147,Advanced,Out and back,4.7
+148,Easy,Loop,4.8
+149,Easy,Out and back,4.2
+150,Easy,Loop,4.5
+151,Easy,Loop,4.5
+152,Easy,Loop,4.4
+153,Intermediate,Out and back,4.6
+154,Intermediate,Loop,4.4
+155,Intermediate,Loop,4.6
+156,Intermediate,Loop,4.0
+157,Intermediate,Loop,4.6
+158,Advanced,Out and back,4.5
+159,Advanced,Out and back,4.2
+160,Advanced,Point to point,4.2
+161,Advanced,Out and back,4.4
+162,Advanced,Point to point,4.3
+163,Easy,Out and back,3.8
+164,Easy,Point to point,4.4
+165,Intermediate,Loop,4.8
+166,Intermediate,Loop,4.8
+167,Intermediate,Loop,4.4
+168,Intermediate,Loop,4.5
+169,Intermediate,626,4.6
+170,Advanced,Loop,4.4
+171,Advanced,Out and back,4.5
+172,Advanced,Out and back,4.7
+173,Advanced,Out and back,4.6
+174,Advanced,Loop,4.7
+175,Easy,Out and back,4.3
+176,Easy,Loop,4.6
+177,Easy,Loop,4.6
+178,Easy,Loop,4.6
+179,Easy,Out and back,4.4
+180,Intermediate,Loop,4.8
+181,Intermediate,Loop,4.6
+182,Intermediate,Out and back,4.8
+183,Intermediate,Loop,4.6
+184,Intermediate,Loop,4.4
+185,Advanced,Out and back,4.7
+186,Advanced,Out and back,4.7
+187,Advanced,Out and back,4.8
+188,Advanced,Loop,4.8
+189,Advanced,Loop,4.7
+190,Easy,Loop,4.5
+191,Easy,Loop,4.5
+192,Easy,Loop,4.7
+193,Easy,Loop,4.3
+194,Easy,Loop,4.6
+195,Intermediate,Out and back,4.8
+196,Intermediate,Loop,4.7
+197,Intermediate,Loop,4.8
+198,Intermediate,Loop,4.9
+199,Intermediate,Out and back,4.7
+200,Advanced,Out and back,4.5
+201,Advanced,Point to point,4.4
+202,Advanced,Out and back,4.5
+203,Advanced,Loop,4.4
+204,Advanced,Loop,4.4
+205,Easy,Point to point,4.2
+206,Easy,Loop,4.3
+207,Easy,Out and back,3.6
+208,Easy,Out and back,4.1
+209,Easy,Loop,4.3
+210,Intermediate,Loop,4.7
+211,Intermediate,Loop,4.2
+212,Intermediate,Loop,4.3
+213,Intermediate,Loop,4.0
+214,Intermediate,Loop,4.4
+215,Easy,Loop,4.7
+216,Easy,Loop,4.8
+217,Easy,Loop,4.9
+218,Easy,Loop,4.3
+219,Easy,Out and back,4.7
+220,Easy,Out and back,4.7
+221,Easy,Out and back,4.6
+222,Easy,Out and back,4.8
+223,Intermediate,Out and back,4.6
+224,Intermediate,Loop,4.5
+225,Intermediate,Loop,4.6
+226,Intermediate,Out and Back,4.4
+227,Intermediate,Loop,4.6
+228,Advanced,Loop,5.0
+229,Advanced,Loop,4.9
+230,Advanced,Loop,4.7
+231,Advanced,Loop,5.0
+232,Advanced,Loop,4.8
+233,Easy,Loop,4.1
+234,Easy,Loop,4.5
+235,Easy,Loop,4.3
+236,Easy,Loop,4.6
+237,Easy,Loop,4.5
+238,Intermediate,Loop,4.6
+239,Intermediate,Out and back,4.6
+240,Intermediate,Out and back,4.6
+241,Intermediate,Loop,4.5
+242,Intermediate,Loop,4.6
+243,Advanced,Loop,4.5
+244,Advanced,Loop,4.8
+245,Advanced,Out and back,4.6
+246,Advanced,Out and back,4.6
+247,Advanced,Loop,4.8
+248,Easy,Loop,4.3
+249,Easy,Out and back,4.4
+250,Easy,Loop,4.8
+251,Easy,Loop,4.8
+252,Easy,Loop,4.8
+253,Intermediate,Out and back,4.7
+254,Intermediate,Out and back,4.9
+255,Intermediate,Loop,4.9
+256,Intermediate,Out and back,4.8
+257,Intermediate,Loop,4.7
+258,Advanced,Out and back,4.9
+259,Advanced,Out and back,5.0
+260,Advanced,Out and back,4.5
+261,Advanced,Out and back,4.5
+262,Advanced,Out and back,4.9
+263,Easy,Loop,4.7
+264,Easy,Out and back,4.5
+265,Easy,Loop,4.7
+266,Easy,Loop,4.6
+267,Easy,Out and back,4.5
+268,Intermediate,Out and back,4.6
+269,Intermediate,Loop,4.3
+270,Easy,Out and back,4.8
+271,Easy,Out and back,4.6
+272,Easy,Loop,3.9
+273,Intermediate,Loop,4.8
+274,Intermediate,Loop,4.7
+275,Intermediate,Out and back,4.3
+276,Intermediate,Out and back,4.5
+277,Intermediate,Loop,4.6
+278,Advanced,Point to point,4.6
+279,Advanced,Loop,4.6
+280,Advanced,Loop,4.0
+281,Advanced,Point to point,4.7
+282,Advanced,Loop,4.0
+283,Easy,Loop,4.9
+284,Easy,Out and back,4.1
+285,Easy,Out and back,4.0
+286,Easy,Out and back,4.5
+287,Easy,Out and back,4.2
+288,Intermediate,Loop,4.7
+289,Intermediate,Loop,4.4
+290,Intermediate,Loop,4.3
+291,Intermediate,Out and back,4.5
+292,Easy,Loop,4.1
+293,Easy,Loop,4.6
+294,Easy,Out and back,4.3
+295,Easy,Loop,4.3
+296,Easy,Loop,4.0
+297,Intermediate,Out and back,4.7
+298,Intermediate,Out and back,4.4
+299,Intermediate,Loop,4.3
+300,Intermediate,Loop,4.5
+301,Intermediate,Loop,4.3
+302,Easy,Out and back,4.8
+303,Easy,Out and back,4.4
+304,Easy,Loop,4.6
+305,Easy,Loop,4.6
+306,Easy,Loop,4.2
+307,Intermediate,Out and back,4.8
+308,Intermediate,Out and back,4.7
+309,Intermediate,Out and back,4.3
+310,Intermediate,Loop,4.6
+311,Intermediate,Loop,4.6
+312,Advanced,Out and back,4.8
+313,Advanced,Loop,4.5
+314,Advanced,Out and back,4.8
+315,Advanced,Out and back,4.2
+316,Advanced,Loop,4.5
+317,Easy,Out and back,4.6
+318,Easy,Loop,4.6
+319,Easy,Loop,4.3
+320,Easy,Out and back,4.4
+321,Easy,Loop,4.2
+322,Intermediate,Loop,4.8
+323,Intermediate,Out and back,4.7
+324,Intermediate,Out and back,4.9
+325,Intermediate,Out and back,4.7
+326,Advanced,Loop,4.8
+327,Advanced,Loop,4.6
+328,Advanced,Out and back,4.8
+329,Advanced,Out and back,4.6
+330,Easy,Out and back,4.4
+331,Easy,Out and back,4.9
+332,Easy,Out and back,4.8
+333,Easy,Out and back,3.9
+334,Easy,Loop,4.7
+335,Intermediate,Out and back,4.3
+336,Intermediate,Out and back,4.5
+337,Intermediate,Out and back,4.8
+338,Intermediate,Out and back,4.7
+339,Intermediate,Out and back,4.8
+340,Advanced,Out and back,4.9
+341,Advanced,Out and back,4.8
+342,Advanced,Out and back,4.6
+343,Advanced,Out and back,4.8
+344,Advanced,Out and back,4.9
+345,Easy,Out and back,4.3
+346,Easy,Loop,4.7
+347,Easy,Loop,4.6
+348,Easy,Loop,4.4
+349,Easy,Out and back,4.7
+350,Intermediate,Out and back,4.9
+351,Intermediate,Out and back,5.0
+352,Intermediate,Out and back,4.8
+353,Intermediate,Out and back,4.6
+354,Intermediate,Out and back,4.3
+355,Advanced,Out and back,4.9
+356,Advanced,Loop,4.9
+357,Advanced,Out and back,5.0
+358,Advanced,Out and back,4.8
+359,Advanced,Loop,4.2
+360,Easy,Out and back,4.6
+361,Easy,Out and back,4.6
+362,Easy,Out and back,4.9
+363,Easy,Out and back,4.6
+364,Easy,Out and back,4.3
+365,Intermediate,Out and back,4.8
+366,Easy,Out and back,4.6
+367,Easy,Out and back,4.4
+368,Easy,Loop,4.6
+369,Easy,Loop,4.6
+370,Intermediate,Out and back,4.7
+371,Advanced,Out and back,4.8
+372,Easy,Out and back,4.6
+373,Easy,Out and back,4.9
+374,Easy,Out and back,4.9
+375,Easy,Out and back,4.4
+376,Easy,Loop,4.7
+377,Intermediate,Loop,4.7
+378,Intermediate,Out and back,4.5
+379,Intermediate,Loop,4.8
+380,Intermediate,Out and back,4.7
+381,Intermediate,Out and back,4.3
+382,Advanced,Out and back,4.8
+383,Advanced,Out and back,4.6
+384,Advanced,Out and back,4.6
+385,Advanced,Loop,4.5
+386,Advanced,Out and back,4.4
+387,Easy,Point to point,4.9
+388,Easy,Out and back,4.7
+389,Easy,Out and back,4.6
+390,Easy,Out and back,4.8
+391,Easy,Loop,4.7
+392,Intermediate,Out and back,4.6
+393,Intermediate,Loop,4.7
+394,Intermediate,Out and back,4.8
+395,Intermediate,Out and back,4.7
+396,Intermediate,Loop,4.6
+397,Advanced,Loop,4.6
+398,Advanced,Out and back,3.7
+399,Advanced,Out and back,4.6
+400,Easy,Loop,4.6
+401,Easy,Loop,4.3
+402,Intermediate,Loop,4.6
+403,Intermediate,Out and back,5.0
+404,Intermediate,Loop,4.7
+405,Advanced,Point to point,4.4
+406,Advanced,Loop,4.3
+407,Advanced,Point to point,4.5
+408,Advanced,Out and back,5.0
+409,Easy,Loop,4.8
+410,Easy,Out and back,4.7
+411,Easy,Loop,4.4
+412,Easy,Loop,4.7
+413,Easy,Loop,4.3
+414,Intermediate,Out and back,4.9
+415,Intermediate,Loop,4.8
+416,Intermediate,Loop,4.8
+417,Intermediate,Loop,4.8
+418,Intermediate,Loop,4.8
+419,Advanced,Out and back,4.9
+420,Advanced,Out and back,4.8
+421,Advanced,Loop,4.9
+422,Advanced,Out and back,5.0
+423,Advanced,Out and back,4.8
