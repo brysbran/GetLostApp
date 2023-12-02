@@ -1,0 +1,112 @@
+﻿
+<!--
+    File where the ability to search trails and see information about them should be
+    use api to serve this data
+-->
+<!-- Trails.razor -->
+@page "/trails"
+
+<PageTitle>Trails</PageTitle>
+
+<div class="center-container">
+    <h1>Explore Trails</h1>
+    <p>Discover hiking trails across different states.</p>
+</div>
+
+<div class="center-container">
+    <input @bind="searchState" placeholder="Enter state..." />
+    <button @onclick="Search">Search</button>
+</div>
+
+<!-- Display search results using TrailModal -->
+<!-- Trails.razor -->
+<!-- Trails.razor -->
+<!-- Trails.razor -->
+<!-- Trails.razor -->
+@if (searchResults != null && searchResults.Any())
+{
+    <ul class="result-list">
+        @foreach (var trail in searchResults)
+        {
+            <li class="result-item">
+                <h3>@trail.trailName</h3>
+                <div class="details" style="display: @modalDisplays[trail.trailId]">
+                    <p>State: @trail.trailState</p>
+                    <p>Region: @trail.trailRegion</p>
+
+                    <!-- Additional details from trail info endpoint -->
+                    <p>Difficulty: @GetTrailInfo(trail.trailId).trailDifficulty</p>
+                    <p>Length in Miles: @GetTrailDetails(trail.trailId).trailLengthMi</p>
+                    <p>Rating: @GetTrailInfo(trail.trailId).trailRating</p>
+                    <!-- Add more details as needed -->
+                </div>
+                <button @onclick="() => ToggleDetails(trail.trailId)">Toggle Details</button>
+            </li>
+        }
+    </ul>
+}
+else
+{
+    <div class="center-container">
+        <p float=0>No trails found for the entered state.</p>
+    </div>
+}
+
+@code {
+    private string searchState;
+    private List<TrailModal.TrailModel> searchResults;
+    private Dictionary<int, string> modalDisplays = new Dictionary<int, string>(); // Track modal display for each trail
+
+    // Inject HttpClient into the component
+    [Inject]
+    private HttpClient HttpClient { get; set; }
+
+    // Function to get trail info by ID
+    private TrailInfoModel GetTrailInfo(int trailId)
+    {
+        return HttpClient.GetFromJsonAsync<TrailInfoModel>($"http://127.0.0.1:8000/trails/{trailId}/info").Result;
+    }
+    //trailDurationMin,trailElevationFt,trailLengthMi
+    private TrailDetailsModel GetTrailDetails(int trailId)
+    {
+        return HttpClient.GetFromJsonAsync<TrailDetailsModel>($"http://127.0.0.1:8000/trails/{trailId}/details").Result;
+    }
+
+    private async Task Search()
+    {
+        try
+        {
+            // Call the API to get trails based on the user's entered state
+            searchResults = await HttpClient.GetFromJsonAsync<List<TrailModal.TrailModel>>($"http://127.0.0.1:8000/trails/{searchState}");
+
+            // Initialize modal display for each trail
+            modalDisplays = searchResults.ToDictionary(trail => trail.trailId, _ => "none");
+
+            // Log the received data for debugging
+            Console.WriteLine($"Received data from API: {Newtonsoft.Json.JsonConvert.SerializeObject(searchResults)}");
+        }
+        catch (Exception ex)
+        {
+            // Log any exceptions for debugging
+            Console.WriteLine($"Error fetching data from API: {ex.Message}");
+        }
+    }
+
+
+
+    private void ToggleDetails(int trailId) =>
+        // Toggle the display for the corresponding trail's details
+        modalDisplays[trailId] = modalDisplays[trailId] == "block" ? "none" : "block";
+
+    public class TrailInfoModel
+    {
+        public string trailDifficulty { get; set; }
+        public double trailLength { get; set; }
+        public double trailRating { get; set; }
+        // Add more properties as needed
+    }
+    public class TrailDetailsModel
+    {
+        public double trailLengthMi { get; set; }
+    }
+}
