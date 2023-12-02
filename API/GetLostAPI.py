@@ -1,9 +1,7 @@
 from fastapi import FastAPI, HTTPException, File, UploadFile, Form
 from fastapi.responses import JSONResponse
 from fastapi.encoders import jsonable_encoder
-from pydantic import BaseModel
 import pandas as pd
-import logging
 import uvicorn
 
 app = FastAPI()
@@ -95,148 +93,58 @@ def get_trail_details_endpoint(trail_id: int):
 def get_all_trails():
     return trails_df.to_dict(orient='records')
 
-# Function to update trail information by ID
-def update_trail(trail_id, updated_info):
-    # Your logic to update trail information in the data source
-    try:
-        trails_info_df.loc[trails_info_df['trailID'] == trail_id, ['trailDifficulty', 'trailLength', 'trailRating']] = [
-            updated_info['trailDifficulty'], updated_info['trailLength'], updated_info['trailRating']
-        ]
-        trails_info_df.to_csv('trailsinfo.csv', index=False)
-        return get_trail_info(trail_id)
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=str(e))
-
-# Function to delete trail by ID
-def delete_trail(trail_id):
-    # Your logic to delete the trail from the data source
-    try:
-        trails_info_df.drop(trails_info_df[trails_info_df['trailID'] == trail_id].index, inplace=True)
-        trails_info_df.to_csv('trailsinfo.csv', index=False)
-        return {"message": f"Trail {trail_id} has been deleted successfully"}
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=str(e))
-
-# API endpoint to update trail information by ID
-@app.put("/trails/{trail_id}/update", response_model=dict)
-def update_trail_endpoint(trail_id: int, updated_info: dict):
-    try:
-        return update_trail(trail_id, updated_info)
-    except HTTPException as e:
-        # Re-raise HTTPException with the appropriate status code
-        raise e
-
-# API endpoint to delete trail by ID
-@app.delete("/trails/{trail_id}/delete", response_model=dict)
-def delete_trail_endpoint(trail_id: int):
-    try:
-        return delete_trail(trail_id)
-    except HTTPException as e:
-        # Re-raise HTTPException with the appropriate status code
-        raise e
-
-# Define a Pydantic model for UserPost
-class UserPost(BaseModel):
-    Description: str
-    Rating: int
-    TrailName: str
-    PhotoPath: str
-    
 #POST
 @app.post("/user/posts")
 async def post_user_experience(
-    Description: str = Form(...),
-    Rating: int = Form(...),
-    TrailName: str = Form(...),
+    user_post: dict,
     photo: UploadFile = File(..., max_length=None),
+    TrailName: str = Form(...),
 ):
     try:
-        # Process the user's input
-        new_post = {
-        "description": user_post.get("Description"),
-        "postRating": user_post.get("Rating"),
-        "trailName": str(TrailName),
-        "PhotoPath": f"/API/UserImgs/{photo.filename}",
-        }
-        print(new_post) 
-        new_post_df = pd.DataFrame([new_post])
-        print(new_post_df) 
-        # Save the post details to a CSV file
-        with open("userPosts.csv", "a", encoding='utf-8') as f:
-            new_post_df = pd.DataFrame([new_post], columns=["description", "postRating", "trailName", "photoPath"])
-            new_post_df.to_csv(f, header=f.tell() == 0, index=False, encoding='utf-8')
-
-        # Handle photo upload and save the image
-        with open(f"/API/UserImgs/{photo.filename}", "wb") as f:
-            f.write(photo.file.read())
-
-        # Return a response, possibly with a success message
-        return {"message": "Post created successfully"}
-
+        print("User post received: ", user_post)
+        result = handle_user_post(user_post, photo, TrailName)
+        return JSONResponse(content=jsonable_encoder(result), status_code=200)
     except HTTPException as e:
         return JSONResponse(
             content=jsonable_encoder({"error": str(e)}), status_code=e.status_code
         )
 
 
-# POST endpoint for creating a user post
-@app.post("/user/posts")
-async def handle_user_post(user_post: UserPost, photo: UploadFile, TrailName: str = Form(...)):
-    try:
-        # Convert Pydantic model to a dictionary
-        new_post = jsonable_encoder(user_post)
 
-        # Add additional data to the dictionary
-        new_post["trailName"] = TrailName
+def handle_user_post(user_post: dict, photo: UploadFile, TrailName: str):
+    # Validate and process the user's input
+    new_post = {
+        "Description": user_post.get("Description"),
+        "Rating": user_post.get("Rating"),
+        "trailName": str(TrailName),
+    }
+    print(new_post)
+    new_post_df = pd.DataFrame([new_post])
+    print("Saving post details to CSV...")
+    print(new_post_df)
 
-        # Convert the dictionary to a DataFrame
-        new_post_df = pd.DataFrame([new_post])
+    # Save the post details to a CSV file
+    with open("userPosts.csv", "a", encoding='utf-8') as f:
+        new_post_df.to_csv(f, header=f.tell() == 0, index=False, encoding='utf-8')
 
-        # Save the post details to a CSV file
-        with open("userPosts.csv", "a", encoding='utf-8') as f:
-            new_post_df.to_csv(f, header=f.tell() == 0, index=False, encoding='utf-8')
+    # Handle photo upload and save the image
+    with open(f"uploads/{photo.filename}", "wb") as f:
+        f.write(photo.file.read())
 
-        # Handle photo upload and save the image
-        with open(f"API/UserImgs/{photo.filename}", "wb") as f:
-            f.write(photo.file.read())
+    # Return a response, possibly with a success message
+    return {"message": "Post created successfully"}
 
-        # Return a response, possibly with a success message
-        return {"message": "Post created successfully"}
 
-    except Exception as e:
-        logging.exception(f"Error creating post: {e}")
-        raise HTTPException(status_code=500, detail="Internal Server Error")
-
-@app.get("/user/posts", response_model=list[UserPost])
-async def get_user_posts():
-    print("Endpoint is called")
+# Fetch user posts from CSV
+@app.get("/user/posts", response_model=list[dict])
+def get_user_posts():
     try:
         user_posts_df = pd.read_csv("userPosts.csv", encoding='utf-8')
-
-        # Convert DataFrame to a list of dictionaries
-        user_posts_data = user_posts_df.to_dict(orient='records')
-
-        # Create a list to store UserPost instances
-        user_posts = []
-
-        # Iterate over each record and create UserPost instance
-        for post_data in user_posts_data:
-            user_post = UserPost(
-                Description=post_data.get('description', ''),
-                Rating=post_data.get('postRating', ''),
-                TrailName=post_data.get('trailName', ''),
-                PhotoPath=post_data.get('photoPath', '')
-            )
-            user_posts.append(user_post)
-
-        # Log the fetched posts
-        print(user_posts)
-
+        user_posts = user_posts_df.to_dict(orient='records')
         return user_posts
-
     except Exception as e:
         logging.exception("Error fetching user posts:")
-        raise HTTPException(status_code=500, detail="Internal Server Error")
+        raise HTTPException(status_code=500, detail="Internal Server Error")    
     
 
 if __name__ == "main":
