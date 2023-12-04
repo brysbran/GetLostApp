@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "9SprkHBfoYwLVldE3O6ipk6h/9Zb41g9Lg2oDzwmJgo=",
+  "Hash": "nalccCSFOSjg/2MZHqDv3ftG19j3VBDYLl6S0kF86uI=",
   "Source": "GetLostApp",
   "BasePath": "_content/GetLostApp",
   "Mode": "Default",
@@ -440,6 +440,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\carousel.js"
+    },
+    {
+      "Identity": "C:\\Users\\bcbra\\Downloads\\GetLostApp-master\\GetLostApp-master\\wwwroot\\js\\modalFunctions.js",
+      "SourceId": "GetLostApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\bcbra\\Downloads\\GetLostApp-master\\GetLostApp-master\\wwwroot\\",
+      "BasePath": "_content/GetLostApp",
+      "RelativePath": "js/modalFunctions.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\modalFunctions.js"
     }
   ]
 }

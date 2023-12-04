@@ -1,4 +1,4 @@
-using GetLostApp.Data;
+
 using Microsoft.AspNetCore.Components.Web;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -6,10 +6,12 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
-builder.Services.AddSingleton<WeatherForecastService>();
 
 // Add HttpClient service
-builder.Services.AddHttpClient();
+builder.Services.AddHttpClient("GetLostApp", client =>
+{
+    client.BaseAddress = new Uri("http://127.0.0.1:8000/");
+});
 
 var app = builder.Build();
 

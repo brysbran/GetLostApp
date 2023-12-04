@@ -1,4 +1,9 @@
 ﻿@page "/share"
+@using Newtonsoft.Json;
+@using System.Text;
+@inject IJSRuntime JSRuntime
+@using Microsoft.AspNetCore.Components
+@using System.Net
 
 <div class="center-container">
     <h2>Share</h2>
@@ -28,6 +33,20 @@
     </div>
     <button @onclick="CreatePost">Create Post</button>
 </div>
+<!--
+<div class="center-container">
+    <h4>Edit a Post</h4>
+    <label>ID of post to Edit</label>
+    <input @bind="updatedPost.PostId" />
+    <label>New Description</label>
+    <input @bind=updatedPost.Description />
+    <label>New Rating</label>
+    <input @bind="newPost.Rating" />
+    <label>New Trail Name</label>
+    <input @bind="updatedPost.TrailName" />
+    <button @onclick="@(async () => await UpdateUserPost(updatedPost))">Update Post</button>
+</div>
+-->
 
 <!-- Display existing posts -->
 @if (userPosts != null && userPosts.Any())
@@ -48,65 +67,168 @@
     </div>
 }
 
+
+
 @code {
     private List<UserPostModel> userPosts;
     private UserPostModel newPost = new UserPostModel();
     private IBrowserFile uploadedFile;
     private List<TrailModel> trails = new List<TrailModel>();
+    private UserPostModel updatedPost = new UserPostModel();
+    private bool showUpdateModal = false;
 
-    // Inject HttpClient into the component
+    // Inject HttpClientFactory into the component
+    //was originally using HttpClient but had a sh*t ton of issues.
     [Inject]
-    private HttpClient HttpClient { get; set; }
+    private IHttpClientFactory HttpClientFactory { get; set; }
+
+    private HttpClient HttpClient => HttpClientFactory.CreateClient("GetLostApp");
+
+
+    private HttpClient CreateNewHttpClient()
+    {
+        var httpClient = new HttpClient();
+        // Set any default properties here
+        httpClient.Timeout = TimeSpan.FromSeconds(5);
+        return httpClient;
+    }
 
     // Event handler for file upload
     private async Task HandleFileChange(InputFileChangeEventArgs e)
     {
-        uploadedFile = e.GetMultipleFiles().FirstOrDefault();
+        var files = e.GetMultipleFiles();
+        if (files.Count > 0)
+        {
+            uploadedFile = files[0];
+        }
     }
 
-    // Event handler to create a new post
     private async Task CreatePost()
     {
         Console.WriteLine("CreatePost() called");
+
         try
         {
-            // Check if a file is uploaded
-            if (uploadedFile != null)
+            using (var cts = new CancellationTokenSource(TimeSpan.FromMinutes(30))) // Adjust the timeout duration as needed
             {
-                // Save the file to the specified path
-                var filePath = Path.Combine("F:\\ETSU_Fall_23\\Server_Side\\GetLostApp\\GetLostApp\\API\\UserImgs\\", uploadedFile.Name);
+                newPost.PostId = Guid.NewGuid().ToString();
+                HttpClient.Timeout = Timeout.InfiniteTimeSpan;
 
-                using (var stream = new FileStream(filePath, FileMode.Create))
+                var content = new MultipartFormDataContent();
+                content.Add(new StringContent(newPost.PostId), "PostId");
+                content.Add(new StringContent(newPost.TrailName), "TrailName");
+                content.Add(new StringContent(newPost.Description), "Description");
+                content.Add(new StringContent(newPost.Rating.ToString()), "Rating");
+                Console.WriteLine(newPost + "created");
+
+                if (uploadedFile != null)
                 {
-                    await uploadedFile.OpenReadStream().CopyToAsync(stream);
+                    newPost.Photo = uploadedFile.Name;
+                    using (var fileStream = uploadedFile.OpenReadStream())
+                    {
+                        content.Add(new StreamContent(fileStream), "photo", uploadedFile.Name);
+                    }
                 }
 
-                // Set the Photo property of the new post to the file path
-                newPost.Photo = filePath;
+                Console.WriteLine("Sending HTTP request");
+                // Post data to the API endpoint using the new instance of HttpClient
+                HttpResponseMessage response = await HttpClient.PostAsync("http://127.0.0.1:8000/user/posts", content, cts.Token);
+                Console.WriteLine("HTTP request received");
+                // Check if the post was successful
+                response.EnsureSuccessStatusCode();
+                Console.WriteLine("Post was sent");
+
+                // Refresh the list of user posts
+                await LoadUserPosts();
             }
-
-            // Post data to the API endpoint
-            HttpResponseMessage response = await HttpClient.PostAsJsonAsync("/user/posts", newPost);
-
-            // Check if the post was successful
-            response.EnsureSuccessStatusCode();
-
-            // Refresh the list of user posts
-            await LoadUserPosts();
+        }
+        catch (TaskCanceledException ox) when (ox.CancellationToken.IsCancellationRequested)
+        {
+            Console.WriteLine("Task was canceled due to timeout");
+        }
+        catch (TaskCanceledException ox)
+        {
+            Console.WriteLine($"Task was canceled: {ox.Message}");
         }
         catch (Exception ex)
         {
             Console.WriteLine($"Error creating post: {ex.Message}");
+            // Log the exception details or handle the error appropriately
         }
-
     }
+
+
+    public async Task UpdateUserPost(UserPostModel updatedPost)
+    {
+        try
+        {
+            // Create a new HttpClient instance
+            using (var httpClient = new HttpClient())
+            {
+                updatedPost.PostId = updatedPost.PostId;
+                updatedPost.Description = updatedPost.Description;
+                updatedPost.Rating = updatedPost.Rating;
+                updatedPost.TrailName = updatedPost.TrailName;
+                // Specify the base URL of your API
+                httpClient.BaseAddress = new Uri("http://127.0.0.1:8000/");
+
+                // Specify the endpoint for updating a user post
+                string endpoint = $"user/posts/{updatedPost.PostId}";
+
+                // Convert the updated post object to JSON
+                var jsonContent = new StringContent(JsonConvert.SerializeObject(updatedPost), Encoding.UTF8, "application/json");
+
+                // Make the PUT request to update the user post
+                
+                HttpResponseMessage response = await httpClient.PutAsync(endpoint, jsonContent);
+
+                if (response.StatusCode == HttpStatusCode.NotFound)
+                {
+                    Console.WriteLine($"Post with ID {updatedPost.PostId} not found");
+                    
+                }
+                // Check if the update was successful
+                response.EnsureSuccessStatusCode();
+
+                // Optionally, you can handle the response if needed
+                var responseBody = await response.Content.ReadAsStringAsync();
+                Console.WriteLine($"Update response: {responseBody}");
+
+                // Refresh the list of user posts after the update
+                await LoadUserPosts();
+            }
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error updating user post: {ex.Message}");
+            // Log the exception details or handle the error appropriately
+        }
+    }
+    
 
     // Load user posts from the API
     private async Task LoadUserPosts()
     {
         try
         {
-            userPosts = await HttpClient.GetFromJsonAsync<List<UserPostModel>>("user/posts");
+            if (HttpClient.BaseAddress == null)
+            {
+                HttpClient.BaseAddress = new Uri("http://127.0.0.1:8000/");
+            }
+
+            var response = await HttpClient.GetAsync("user/posts");
+
+            if (response.IsSuccessStatusCode)
+            {
+                // Use JsonConvert to deserialize the JSON response
+                var jsonResponse = await response.Content.ReadAsStringAsync();
+                userPosts = JsonConvert.DeserializeObject<List<UserPostModel>>(jsonResponse);
+            }
+            else
+            {
+                // Handle unsuccessful response
+                Console.WriteLine($"Failed to fetch user posts. Status code: {response.StatusCode}");
+            }
         }
         catch (Exception ex)
         {
@@ -117,24 +239,27 @@
     // Load user posts when the component is initialized
     protected override async Task OnInitializedAsync()
     {
-        // Set the base address for relative URIs
-        HttpClient.BaseAddress = new Uri("http://127.0.0.1:8000/");
-
-        await LoadUserPosts();
+            
+        if (HttpClient.BaseAddress == null)
+        {
+            HttpClient.BaseAddress = new Uri("http://127.0.0.1:8000/");
+        }
+        
+         await LoadUserPosts();
         // await LoadTrails();
     }
 
     // Load trails from the API
-    /* private async Task LoadTrails()
-     {
-         try
-         {
+     /* private async Task LoadTrails()
+             {
+             try
+             {
              trails = await HttpClient.GetFromJsonAsync<List<TrailModel>>("trails");
          }
          catch (Exception ex)
-         {
+             {
              Console.WriteLine("Error fetching trails");
-         }
+     }
      }*/
 
     public class TrailModel
@@ -145,10 +270,11 @@
 
     public class UserPostModel
     {
-        public string TrailId { get; set; }
+        public string PostId { get; set; }
         public string TrailName { get; set; }
         public string Description { get; set; }
         public string Photo { get; set; }
+        public string PhotoPath { get; set; }
         public int Rating { get; set; }
     }
 }

@@ -19,6 +19,7 @@
 
   <ItemGroup>
     <Folder Include="API\UserImgs\" />
+    <Folder Include="Data\" />
     <Folder Include="Shared\imgs\" />
   </ItemGroup>
 
